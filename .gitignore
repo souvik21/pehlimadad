@@ -1,0 +1,25 @@
+# ── Environment variables — never commit ──────────────────────────────────────
+pehlimadad/.env
+pehlimadad/.env.*
+!pehlimadad/.env.example
+
+# ── Serverless Framework artifacts — contain baked-in credentials ─────────────
+pehlimadad/.serverless/
+
+# ── Dependencies ──────────────────────────────────────────────────────────────
+pehlimadad/node_modules/
+pehlimadad/web/node_modules/
+
+# ── Next.js build output ──────────────────────────────────────────────────────
+pehlimadad/web/.next/
+pehlimadad/web/out/
+
+.claude/
+pehlimadad/web/scripts/gen-og.js
+
+# ── macOS ─────────────────────────────────────────────────────────────────────
+.DS_Store
+**/.DS_Store
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+*.log
