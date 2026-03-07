@@ -95,6 +95,8 @@ Twilio → WhatsApp User receives:
 | Malayalam | 35M+ | Google WaveNet |
 | Punjabi | 30M+ | Google WaveNet |
 
+> Amazon Polly neural voices currently support Hindi and English for Indian languages. For the remaining 8 regional languages, Google WaveNet TTS is used as a fallback to ensure native-quality voice responses across all supported languages.
+
 ---
 
 ## Repo Structure
