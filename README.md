@@ -19,6 +19,8 @@ The bot is live on WhatsApp. No app download, no registration.
 
 **MVP Link:** https://pehlimadad.in
 
+![PehliMadad Landing Page](pehlimadad/web/public/landing-preview.jpg)
+
 ---
 
 ## The Problem
