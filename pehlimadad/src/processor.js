@@ -190,7 +190,7 @@ async function runFullAssessment(phone, session, detailsText, coords, transcript
     console.log(`[PROCESSOR][${phone}] no coords — assessment.locationQuery:`, assessment?.locationQuery);
   }
 
-  const isWestBengal = lang === 'bn' && /west bengal/i.test(locationQuery || '');
+  const isWestBengal = /west bengal/i.test(locationQuery || '');
   const fullMessage = transcriptNote + cleanResponse + '\n\n' + getEmergencyFooter(lang, isWestBengal);
 
   const newHistory = [

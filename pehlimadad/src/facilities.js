@@ -56,10 +56,17 @@ const FOOTER = {
 🙏 ਆਪਣੀ ASHA/ANM ਵਰਕਰ ਨੂੰ ਹੁਣੇ ਬੁਲਾਓ — _ਉਹ ਮਦਦ ਕਰ ਸਕਦੀ ਹੈ_`,
 };
 
+const SWASTHA_SATHI = {
+  hi: '💳 *स्वास्थ्य साथी कार्ड* है तो साथ ले जाएं — _पश्चिम बंगाल के सरकारी अस्पताल में मुफ्त इलाज हो सकता है_',
+  en: '💳 Carry your *Swastha Sathi card* if you have one — _free treatment at West Bengal govt hospitals_',
+  bn: '💳 *স্বাস্থ্য সাথী কার্ড* থাকলে সেটিও সাথে নিন — _পশ্চিমবঙ্গের সরকারি হাসপাতালে বিনামূল্যে চিকিৎসা পাবেন_',
+};
+
 function getEmergencyFooter(lang = 'hi', isWestBengal = false) {
   let footer = FOOTER[lang] || FOOTER.hi;
-  if (isWestBengal && lang === 'bn') {
-    footer += '\n\n💳 *স্বাস্থ্য সাথী কার্ড* থাকলে সেটিও সাথে নিন — _পশ্চিমবঙ্গের সরকারি হাসপাতালে বিনামূল্যে চিকিৎসা পাবেন_';
+  if (isWestBengal) {
+    const swasthaSathi = SWASTHA_SATHI[lang] || SWASTHA_SATHI.hi;
+    footer += '\n\n' + swasthaSathi;
   }
   return footer;
 }

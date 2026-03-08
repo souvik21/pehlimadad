@@ -74,12 +74,13 @@ async function findNearbyHealthFacilities(lat, lng) {
     }
   }
 
-  return merged.slice(0, 5).map((place) => {
+  return merged.slice(0, 3).map((place) => {
     const address = place.vicinity || '';
+    const shortAddress = address.length > 60 ? address.slice(0, 57) + '...' : address;
     const searchQuery = encodeURIComponent(`${place.name}, ${address}`);
     return {
       name: place.name,
-      address,
+      address: shortAddress,
       isOpen: place.opening_hours?.open_now ?? null,
       mapsLink: `https://maps.google.com/maps?q=${searchQuery}`,
     };
