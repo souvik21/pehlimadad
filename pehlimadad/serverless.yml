@@ -5,6 +5,25 @@ frameworkVersion: '3'
 plugins:
   - serverless-dotenv-plugin
 
+package:
+  patterns:
+    - '!web/**'
+    - '!node_modules/aws-sdk/**'
+    - '!node_modules/rxjs/**'
+    - '!node_modules/es-abstract/**'
+    - '!node_modules/ogg-opus-decoder/**'
+    - '!node_modules/@wasm-audio-decoders/**'
+    - '!node_modules/@types/**'
+    - '!node_modules/serverless/**'
+    - '!node_modules/@serverless/**'
+    - '!node_modules/es5-ext/**'
+    - '!node_modules/**/*.md'
+    - '!node_modules/**/*.ts'
+    - '!node_modules/**/test/**'
+    - '!node_modules/**/tests/**'
+    - '!node_modules/**/__tests__/**'
+    - '!node_modules/**/coverage/**'
+
 useDotenv: true
 
 provider:

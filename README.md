@@ -9,6 +9,16 @@
 
 ---
 
+PehliMadad (First Help) is Bharat's first voice-first AI health emergency triage system on WhatsApp, powered entirely by AWS. A user sends a voice note or text in any Indian language — within 30 seconds they receive a severity verdict (CRITICAL/URGENT/MODERATE/MILD) spoken back in their language, a doctor-ready clinical summary, and nearby open hospitals with Google Maps links. No app download. No sign-up. No literacy required.
+
+The stack is 100% serverless on AWS: Amazon Bedrock (Nova Pro) powers multilingual medical reasoning, Amazon Transcribe handles voice-to-text with automatic language identification across 10 Indian languages, Amazon Polly and Google WaveNet deliver voice responses, AWS Lambda runs the full async pipeline, DynamoDB maintains conversation context, and AWS Amplify hosts the landing page. Cost: ~₹0.16 per interaction — making public health scale deployment viable for the first time.
+
+This solution cannot be built without Generative AI. No rule-based system can auto-detect 10 Indian languages from a noisy voice note, reason probabilistically about symptoms, maintain multi-turn triage conversations, and respond coherently to colloquial, panicked input. Amazon Bedrock's Nova Pro makes all of this possible in a single serverless call.
+
+*Solo submission · AWS AI for Bharat Hackathon · Phase 2 · 2026*
+
+---
+
 ## Try It Now
 
 The bot is live on WhatsApp. No app download, no registration.
