@@ -124,7 +124,7 @@ async function process(event) {
   }
 
   if (hasLocation && !hasText) {
-    await speak(phone, t('locationAsk', 'hi'), 'hi', phone);
+    await speak(phone, t('locationAsk', lang), lang, phone);
     await saveSession(phone, { ...session, locationCoords: { lat: parseFloat(latitude), lng: parseFloat(longitude) } });
     return;
   }
@@ -174,7 +174,13 @@ async function runFullAssessment(phone, session, detailsText, coords, transcript
 
   const assessment = parseAssessment(rawResponse);
   const cleanResponse = stripAssessmentBlock(rawResponse);
+  if (!assessment) {
+    console.warn(`[PROCESSOR][${phone}] parseAssessment failed — rawResponse head:`, rawResponse.slice(0, 300));
+  }
   console.log(`[PROCESSOR][${phone}] assessment:`, JSON.stringify(assessment));
+
+  // locationQuery from assessment; fall back to detailsText so we always have something for facilities
+  const locationQuery = assessment?.locationQuery || detailsText;
 
   let resolvedCoords = coords;
   if (!resolvedCoords && assessment?.locationQuery) {
@@ -184,7 +190,7 @@ async function runFullAssessment(phone, session, detailsText, coords, transcript
     console.log(`[PROCESSOR][${phone}] no coords — assessment.locationQuery:`, assessment?.locationQuery);
   }
 
-  const isWestBengal = lang === 'bn' && /west bengal/i.test(assessment?.locationQuery || '');
+  const isWestBengal = lang === 'bn' && /west bengal/i.test(locationQuery || '');
   const fullMessage = transcriptNote + cleanResponse + '\n\n' + getEmergencyFooter(lang, isWestBengal);
 
   const newHistory = [
@@ -219,7 +225,7 @@ async function runFullAssessment(phone, session, detailsText, coords, transcript
 
   // 3. Nearby facilities
   await new Promise((r) => setTimeout(r, 800));
-  await sendFacilitiesMessage(phone, resolvedCoords, assessment?.locationQuery, lang);
+  await sendFacilitiesMessage(phone, resolvedCoords, locationQuery, lang);
 
   // 4. Voice note last
   const audioUrl = await ttsPromise;
@@ -227,6 +233,9 @@ async function runFullAssessment(phone, session, detailsText, coords, transcript
     await new Promise((r) => setTimeout(r, 500));
     await sendMessage(phone, '', audioUrl);
   }
+
+  // Reset session after turn 2 is complete so the next message starts fresh
+  await resetConversation(phone);
 }
 
 async function sendFacilitiesMessage(phone, coords, locationQuery, lang = 'hi') {

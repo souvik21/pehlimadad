@@ -24,7 +24,7 @@ This solution cannot be built without Generative AI. No rule-based system can au
 The bot is live on WhatsApp. No app download, no registration.
 
 1. Open WhatsApp and message **+1 415 523 8886**
-2. Send the join code: `join swam-quarter`
+2. Send the join code: `join ordinary-upper`
 3. Send a voice note or text describing a health emergency in any Indian language
 
 **MVP Link:** https://pehlimadad.in
@@ -174,7 +174,7 @@ https://<your-api-gateway-url>/webhook
 
 ### 5. Test
 
-Send `join <your-sandbox-code>` to +1 415 523 8886 on WhatsApp, then send a voice note.
+Send `join ordinary-upper` to +1 415 523 8886 on WhatsApp, then send a voice note.
 
 ---
 

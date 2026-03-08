@@ -98,7 +98,7 @@ const M = {
     pa: "⚠️ ਸੇਵਾ ਉਪਲਬਧ ਨਹੀਂ. ਐਮਰਜੈਂਸੀ ਵਿੱਚ 108 'ਤੇ ਕਾਲ ਕਰੋ.",
   },
   locationReceived: {
-    hi: '📍 Location mil gayi! Ab yeh batayein:\n• Mariz ki umra\n• Yeh takleef kab se hai',
+    hi: '📍 स्थान मिल गया! अब बताएं:\n• मरीज़ की उम्र\n• यह तकलीफ़ कब से है',
     en: "📍 Location received! Now please tell me:\n• Patient's age\n• Since how long are the symptoms present",
     bn: '📍 অবস্থান পাওয়া গেছে! এখন জানান:\n• রোগীর বয়স\n• কতদিন ধরে সমস্যা হচ্ছে',
     ta: '📍 இருப்பிடம் கிடைத்தது! இப்போது தெரிவிக்கவும்:\n• நோயாளியின் வயது\n• எத்தனை நாட்களாக பிரச்சினை',
@@ -110,7 +110,7 @@ const M = {
     pa: '📍 ਟਿਕਾਣਾ ਮਿਲ ਗਿਆ! ਹੁਣ ਦੱਸੋ:\n• ਮਰੀਜ਼ ਦੀ ਉਮਰ\n• ਕਿੰਨੇ ਦਿਨਾਂ ਤੋਂ ਤਕਲੀਫ਼ ਹੈ',
   },
   locationAsk: {
-    hi: 'Location mil gayi! Ab bataiye — kya takleef hai? (voice note ya text mein)',
+    hi: 'स्थान मिल गया! अब बताएं — क्या तकलीफ़ है? (आवाज़ या टेक्स्ट में)',
     en: 'Location received! Now please describe the emergency (voice or text).',
     bn: 'অবস্থান পাওয়া গেছে! এখন বলুন — কী সমস্যা? (ভয়েস বা টেক্সটে)',
     ta: 'இருப்பிடம் கிடைத்தது! இப்போது சொல்லுங்கள் — என்ன பிரச்சினை? (குரல் அல்லது உரை)',
@@ -122,7 +122,7 @@ const M = {
     pa: 'ਟਿਕਾਣਾ ਮਿਲ ਗਿਆ! ਹੁਣ ਦੱਸੋ — ਕੀ ਤਕਲੀਫ਼ ਹੈ? (ਵੌਇਸ ਜਾਂ ਟੈਕਸਟ)',
   },
   reminder: {
-    hi: 'Kripya batayein: jagah ka naam, zila, rajya (ya WhatsApp location 📎), mariz ki umra, aur kitne din se takleef hai.',
+    hi: 'कृपया बताएं: जगह का नाम, ज़िला, राज्य (या WhatsApp location 📎), मरीज़ की उम्र, और कितने दिन से तकलीफ़ है।',
     en: 'Please share: place name/district/state (or WhatsApp location 📎), patient age, and duration of symptoms.',
     bn: 'অনুগ্রহ করে জানান: জায়গার নাম, জেলা, রাজ্য (বা WhatsApp location 📎), রোগীর বয়স, কতদিন ধরে সমস্যা।',
     ta: 'தயவுசெய்து தெரிவிக்கவும்: இடம், மாவட்டம், மாநிலம் (அல்லது WhatsApp location 📎), நோயாளி வயது, எத்தனை நாட்களாக.',
@@ -172,7 +172,7 @@ const M = {
     ml: ' ❌ ഇപ്പോൾ അടഞ്ഞിരിക്കുന്നു', pa: ' ❌ ਹੁਣ ਬੰਦ',
   },
   facilitiesFooter: {
-    hi: '_Ayushman Bharat card saath le jaayein — sarkari hospital mein ilaj muft mein ho sakta hai._',
+    hi: '_आयुष्मान भारत कार्ड साथ ले जाएं — सरकारी अस्पताल में इलाज मुफ़्त हो सकता है।_',
     en: '_Carry your Ayushman Bharat card — govt hospitals may offer free treatment._',
     bn: '_আয়ুষ্মান ভারত কার্ড সাথে নিন — সরকারি হাসপাতালে বিনামূল্যে চিকিৎসা হতে পারে।_',
     ta: '_ஆயுஷ்மான் பாரத் அட்டை எடுத்துச் செல்லவும் — அரசு மருத்துவமனையில் இலவச சிகிச்சை கிடைக்கலாம்._',

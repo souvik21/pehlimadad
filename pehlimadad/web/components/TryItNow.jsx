@@ -1,7 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 
-const SANDBOX_CODE = 'swam-quarter';
+const SANDBOX_CODE = 'ordinary-upper';
 const WHATSAPP_LINK = `https://wa.me/14155238886?text=join%20${SANDBOX_CODE}`;
 
 export default function TryItNow() {

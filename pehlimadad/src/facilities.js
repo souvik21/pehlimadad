@@ -12,7 +12,7 @@ const FOOTER = {
 
   en: `📞 *Emergency Numbers:* 🚑 *108* (Ambulance) | 🤱 *102* (Maternal) | 🚐 *104* (Mobile Health) | 🆘 *112* (National)
 
-💳 Carry your Ayushman Bharat card — _govt hospital mein ilaj muft mein ho sakta hai_
+💳 Carry your Ayushman Bharat card — _free treatment available at govt hospitals_
 🙏 Call your local ASHA/ANM worker — _they can accompany you_`,
 
   bn: `📞 *জরুরি নম্বর:* 🚑 *108* (অ্যাম্বুলেন্স) | 🤱 *102* (মাতৃত্ব) | 🚐 *104* (মোবাইল স্বাস্থ্য) | 🆘 *112* (জাতীয়)

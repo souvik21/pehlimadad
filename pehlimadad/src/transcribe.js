@@ -14,7 +14,7 @@ const transcribeClient = new TranscribeClient({ region: process.env.AWS_REGION |
 
 const BUCKET = process.env.S3_BUCKET || 'pehlimadad-audio-temp-dev';
 const POLL_INTERVAL_MS = 3000;
-const MAX_POLLS = 10; // 30 seconds max
+const MAX_POLLS = 20; // 60 seconds max
 
 /**
  * Download audio from Twilio MediaUrl (authenticated)

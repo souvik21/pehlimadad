@@ -155,21 +155,30 @@ function buildSummaryMessages(history) {
 // ── Assessment parsing ────────────────────────────────────────────────────────
 
 function parseAssessment(text) {
-  const match = text.match(
-    /---ASSESSMENT---\s*\nSEVERITY:\s*(\w+)\s*\nFACILITY_PRIMARY:\s*(\w+)\s*\nFACILITY_SECONDARY:\s*(\w+)\s*\nLOCATION_QUERY:\s*([^\n]+)\s*\n---END---/
-  );
-  if (!match) return null;
-  const locationQuery = match[4].trim();
+  const severityMatch = text.match(/SEVERITY:\s*(\w+)/);
+  const facilityPrimaryMatch = text.match(/FACILITY_PRIMARY:\s*(\w+)/);
+  const facilitySecondaryMatch = text.match(/FACILITY_SECONDARY:\s*(\w+)/);
+  const locationQueryMatch = text.match(/LOCATION_QUERY:\s*([^\r\n]+)/);
+
+  if (!severityMatch || !facilityPrimaryMatch || !facilitySecondaryMatch || !locationQueryMatch) return null;
+
+  const locationQuery = locationQueryMatch[1].trim();
   return {
-    severity: match[1].trim().toUpperCase(),
-    facilityPrimary: match[2].trim().toUpperCase(),
-    facilitySecondary: match[3].trim().toUpperCase(),
+    severity: severityMatch[1].trim().toUpperCase(),
+    facilityPrimary: facilityPrimaryMatch[1].trim().toUpperCase(),
+    facilitySecondary: facilitySecondaryMatch[1].trim().toUpperCase(),
     locationQuery: locationQuery === 'UNKNOWN' ? null : locationQuery,
   };
 }
 
 function stripAssessmentBlock(text) {
-  return text.replace(/---ASSESSMENT---[\s\S]*?---END---\n?/, '').trim();
+  // Primary: model outputs ---END--- as instructed
+  let result = text.replace(/---ASSESSMENT---[\s\S]*?---END---\n?/, '');
+  // Fallback: model omits ---END---, strip through the last known field (LOCATION_QUERY)
+  if (result === text) {
+    result = text.replace(/---ASSESSMENT---[\s\S]*?LOCATION_QUERY:[^\n]*\n?/, '');
+  }
+  return result.trim();
 }
 
 // ── Facilities message (sent as a separate WhatsApp message) ─────────────────

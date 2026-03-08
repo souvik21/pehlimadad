@@ -2,7 +2,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
 
-const WHATSAPP_LINK = 'https://wa.me/14155238886?text=join%20swam-quarter';
+const WHATSAPP_LINK = 'https://wa.me/14155238886?text=join%20ordinary-upper';
 
 const chatMessages = [
   { out: true,  text: '🎤 Voice note · 0:08', sub: null, delay: 0.8 },
